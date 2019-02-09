@@ -17,4 +17,14 @@ public class FileExtensionToContentComparator {
         }
         return contentType;
     }
+
+    public boolean compareExtensionToContentType(String filePath) throws IllegalFileNameProvidedException, ContentTypeNotFitExtensionException {
+        String extension = FileNameExtensionGetter.extension(filePath);
+        String realContentType = contentType(filePath);
+        if(extension.equalsIgnoreCase(realContentType)){
+            System.out.println("Extension type and content type are the same.");
+            return true;
+        }
+        else throw new ContentTypeNotFitExtensionException("Provided extension is " + extension + " when really file is " + realContentType.toLowerCase());
+    }
 }
