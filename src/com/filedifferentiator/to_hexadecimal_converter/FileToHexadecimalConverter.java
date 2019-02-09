@@ -29,7 +29,27 @@ public class FileToHexadecimalConverter {
         return builder.toString();
     }
 
-    public void resetStringBuilter(){
+    public String fileToHexadecimal(File file){
+
+        try {
+            FileInputStream fileInputStream = new FileInputStream(file);
+            int fileLength;
+            byte[] data = new byte[16];
+
+            do {
+                fileLength = fileInputStream.read(data);
+                for (int i=0;i<fileLength;i++){
+                    builder.append(String.format("%02X",data[i]));
+                }
+
+            } while (fileLength!=-1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return builder.toString();
+    }
+
+    public void resetStringBuilder(){
         this.builder.setLength(0);
     }
 }
