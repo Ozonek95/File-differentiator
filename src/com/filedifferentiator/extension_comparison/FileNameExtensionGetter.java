@@ -1,5 +1,7 @@
 package com.filedifferentiator.extension_comparison;
 
+import com.filedifferentiator.extension_comparison.exceptions.IllegalFileNameProvidedException;
+
 import java.io.File;
 
 public class FileNameExtensionGetter {

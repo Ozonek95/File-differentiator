@@ -1,5 +1,7 @@
 package com.filedifferentiator.extension_comparison;
 
+import com.filedifferentiator.extension_comparison.exceptions.ContentTypeNotFitExtensionException;
+import com.filedifferentiator.extension_comparison.exceptions.IllegalFileNameProvidedException;
 import com.filedifferentiator.extensions_recognize.ExtensionTypes;
 import com.filedifferentiator.to_hexadecimal_converter.FileToHexadecimalConverter;
 

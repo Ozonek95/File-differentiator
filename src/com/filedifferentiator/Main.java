@@ -1,8 +1,8 @@
 package com.filedifferentiator;
 
-import com.filedifferentiator.extension_comparison.ContentTypeNotFitExtensionException;
+import com.filedifferentiator.extension_comparison.exceptions.ContentTypeNotFitExtensionException;
 import com.filedifferentiator.extension_comparison.FileExtensionToContentComparator;
-import com.filedifferentiator.extension_comparison.IllegalFileNameProvidedException;
+import com.filedifferentiator.extension_comparison.exceptions.IllegalFileNameProvidedException;
 
 import java.io.File;
 

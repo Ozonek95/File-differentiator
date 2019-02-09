@@ -1,7 +1,7 @@
 package com.filedifferentiator.extensions_recognize;
 
 public enum ExtensionTypes {
-    JPG(new JpgFilesRecognize()),GIF(new GifFileRecognize());
+    JPG(new JpgFilesRecognize()),GIF(new GifFileRecognize()),PDF(new PdfFilesRecognize());
 
     private ExtensionTypeRecognizer contentRecognizer;
 
