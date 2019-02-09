@@ -1,4 +1,4 @@
-package com.filedifferentiator.extensions;
+package com.filedifferentiator.extensions_recognize;
 
 public class GifFileRecognize implements ExtensionTypeRecognizer {
     private static final String PREFIX_ONE = "474946383961";

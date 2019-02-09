@@ -1,4 +1,4 @@
-package com.filedifferentiator.extensions;
+package com.filedifferentiator.extensions_recognize;
 
 public enum ExtensionTypes {
     JPG(new JpgFilesRecognize()),GIF(new GifFileRecognize());

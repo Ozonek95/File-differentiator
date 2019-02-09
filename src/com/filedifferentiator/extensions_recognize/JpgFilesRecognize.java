@@ -1,4 +1,4 @@
-package com.filedifferentiator.extensions;
+package com.filedifferentiator.extensions_recognize;
 
 public class JpgFilesRecognize implements ExtensionTypeRecognizer {
 
