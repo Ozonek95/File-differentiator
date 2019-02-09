@@ -6,7 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class FileToHexadecinalConverter {
+public class FileToHexadecimalConverter {
     private StringBuilder builder = new StringBuilder();
 
     public String fileToHexadecimal(String filePath){
@@ -27,5 +27,9 @@ public class FileToHexadecinalConverter {
             e.printStackTrace();
         }
         return builder.toString();
+    }
+
+    public void resetStringBuilter(){
+        this.builder.setLength(0);
     }
 }

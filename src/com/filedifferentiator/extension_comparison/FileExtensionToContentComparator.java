@@ -1,10 +1,10 @@
 package com.filedifferentiator.extension_comparison;
 
 import com.filedifferentiator.extensions_recognize.ExtensionTypes;
-import com.filedifferentiator.to_hexadecimal_converter.FileToHexadecinalConverter;
+import com.filedifferentiator.to_hexadecimal_converter.FileToHexadecimalConverter;
 
 public class FileExtensionToContentComparator {
-    private FileToHexadecinalConverter converter = new FileToHexadecinalConverter();
+    private FileToHexadecimalConverter converter = new FileToHexadecimalConverter();
 
     private String contentType(String filePath){
         String contentType = "txt"; //default content guess
@@ -12,9 +12,11 @@ public class FileExtensionToContentComparator {
         ExtensionTypes[] extensionTypes = ExtensionTypes.values();
         for (ExtensionTypes type: extensionTypes) {
             if(type.fileContentType(hexadecimalFile) != null){
+                converter.resetStringBuilter();
                 return type.name();
             }
         }
+        converter.resetStringBuilter();
         return contentType;
     }
 
@@ -25,6 +27,7 @@ public class FileExtensionToContentComparator {
             System.out.println("Extension type and content type are the same.");
             return true;
         }
-        else throw new ContentTypeNotFitExtensionException("Provided extension is " + extension + " when really file is " + realContentType.toLowerCase());
+        else {
+            throw new ContentTypeNotFitExtensionException("Provided extension is " + extension + " when really file is " + realContentType.toLowerCase());}
     }
 }
