@@ -11,26 +11,15 @@ public class FileToHexadecimalConverter {
 
     public String fileToHexadecimal(String filePath){
 
-        try {
-            FileInputStream fileInputStream = new FileInputStream(new File(filePath));
-            int fileLength;
-            byte[] data = new byte[16];
-
-            do {
-                fileLength = fileInputStream.read(data);
-                for (int i=0;i<fileLength;i++){
-                    builder.append(String.format("%02X",data[i]));
-                }
-
-            } while (fileLength!=-1);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return builder.toString();
+        return getHexaReprezentation(new File(filePath));
     }
 
     public String fileToHexadecimal(File file){
 
+        return getHexaReprezentation(file);
+    }
+
+    private String getHexaReprezentation(File file) {
         try {
             FileInputStream fileInputStream = new FileInputStream(file);
             int fileLength;
@@ -38,11 +27,11 @@ public class FileToHexadecimalConverter {
 
             do {
                 fileLength = fileInputStream.read(data);
-                for (int i=0;i<fileLength;i++){
-                    builder.append(String.format("%02X",data[i]));
+                for (int i = 0; i < fileLength; i++) {
+                    builder.append(String.format("%02X", data[i]));
                 }
 
-            } while (fileLength!=-1);
+            } while (fileLength != -1);
         } catch (IOException e) {
             e.printStackTrace();
         }
